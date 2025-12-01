@@ -3,10 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minimalist Brutalist Blog</title>
+  <title>MONOBLOG</title>
   <link rel="stylesheet" href="style.css">
+  <script>
+    if (location.protocol === 'http:') {
+      location.replace('https://' + location.host + location.pathname + location.search + location.hash);
+    }
+  </script>
+  <link rel="icon" type="image/png" href="favicon.png">
 </head>
-<body>
+<body class="posts">
   <div class="top-footer">por isabella fariñas</div>
   <header>
     <h1>MONOBLOG</h1>

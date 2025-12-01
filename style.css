@@ -1,6 +1,38 @@
+html, body {
+  overflow-x: hidden;
+}
+/* Always static header/footer for posts page */
+body.posts .top-footer {
+  position: static !important;
+  top: auto !important;
+  right: auto !important;
+  padding: 0.5rem 2rem 0.5rem 0 !important;
+  text-align: right !important;
+  z-index: 1 !important;
+}
+body.posts footer {
+  position: static !important;
+  left: auto !important;
+  bottom: auto !important;
+  padding: 0.5rem 2rem 0.5rem 1.5rem !important;
+  text-align: left !important;
+  z-index: 1 !important;
+  margin-top: 2rem !important;
+}
 /* Top footer for author credit */
 .top-footer {
   position: fixed;
+/* In portrait mode on posts page, make .top-footer static so it scrolls away */
+@media (orientation: portrait) {
+  body.posts .top-footer {
+    position: static;
+    top: auto;
+    right: auto;
+    width: 100%;
+    text-align: right;
+    z-index: 1;
+  }
+}
   top: 0;
   right: 0;
   padding: 0.5rem 2rem 0.5rem 0;
@@ -38,7 +70,7 @@
 /* Import ChonkyPixels font for pixelated text */
 @font-face {
   font-family: 'ChonkyPixels';
-  src: url('fonts/chonkypixels.ttf') format('truetype');
+  src: url('fonts/ChonkyPixels.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -58,7 +90,7 @@
   width: max-content;
 }
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-@import url('fonts/chonkypixels.css');
+/* Removed redundant import for chonkypixels.css. Font-face is defined above. */
 
 @media (orientation: portrait) {
   .landing-bg-img {
@@ -94,7 +126,7 @@
 .landing-bg {
   position: relative;
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -200,7 +232,19 @@ footer {
   position: fixed;
   left: 0;
   bottom: 0;
-  width: 100vw;
+  width: 100%;
+/* In portrait mode on posts page, make footer static so it only appears at the bottom */
+@media (orientation: portrait) {
+  body.posts footer {
+    position: static;
+    left: auto;
+    bottom: auto;
+    width: 100%;
+    text-align: left;
+    z-index: 1;
+    margin-top: 2rem;
+  }
+}
   padding: 0.5rem 2rem 0.5rem 1.5rem;
   color: #000;
   background: transparent;
