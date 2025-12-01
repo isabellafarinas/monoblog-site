@@ -1,0 +1,213 @@
+/* Top footer for author credit */
+.top-footer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 0.5rem 2rem 0.5rem 0;
+  color: #000;
+  background: transparent;
+  font-size: 1rem;
+  font-family: 'ChonkyPixels', Arial, Helvetica, sans-serif;
+  z-index: 1000;
+  text-align: right;
+}
+@media (max-width: 700px), (orientation: portrait) {
+  .pixel-welcome {
+  position: absolute !important;
+  top: 25% !important;
+  left: 50% !important;
+  transform: translate(-50%, 0) !important;
+  margin: 0 !important;
+  display: block !important;
+  text-align: center !important;
+  }
+}
+@media (orientation: portrait) {
+  .landing-bg-img {
+    right: calc(50vw - 700px);
+    /* Dynamically centers the image: half viewport width minus half image width */
+  }
+}
+@media (orientation: portrait) {
+  .pixel-welcome {
+    right: 30vw !important;
+    top: 20vh !important;
+    font-size: 1.6rem !important;
+  }
+}
+/* Import ChonkyPixels font for pixelated text */
+@font-face {
+  font-family: 'ChonkyPixels';
+  src: url('fonts/chonkypixels.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.pixel-welcome {
+  font-family: 'ChonkyPixels', Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  color: #000;
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translate(-50%, -50%);
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0;
+  z-index: 100;
+  width: max-content;
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('fonts/chonkypixels.css');
+
+@media (orientation: portrait) {
+  .landing-bg-img {
+    width: 80vw;
+    min-width: 700px;
+    max-width: 1400px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+/* Estilos para la página principal con imagen de fondo */
+.landing-bg {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+.landing-main {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-height: 60vh;
+  position: relative;
+  z-index: 2;
+}
+.landing-content {
+  max-width: 60%;
+  padding: 3rem 2rem 2rem 3rem;
+  background: rgba(255,255,255,0.85);
+  border-radius: 1rem;
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.04);
+}
+.landing-bg {
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.landing-bg-img {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 1400px;
+  max-width: 180vw;
+  min-width: 640px;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+}
+/* Move background image to the right on narrow screens */
+@media (max-width: 900px) {
+  .landing-bg-img {
+    right: -35vw;
+  }
+}
+
+/* Removed media queries that shrink the image for smaller screens. The image will stay at a fixed size and remain centered vertically. */
+.landing-main, .landing-content, header, footer {
+  position: relative;
+  z-index: 2;
+}
+/* Blog image and gallery styles from posts.html */
+.blog-img-large {
+  width: 100%;
+  max-width: 500px;
+  display: block;
+  margin: 1rem auto;
+}
+.blog-img-medium {
+  width: 100%;
+  max-width: 400px;
+  display: block;
+  margin: 1rem auto;
+}
+.blog-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+.blog-img-small {
+  width: 200px;
+  height: auto;
+}
+body {
+  background: #fff;
+  color: #000;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+header {
+  background: transparent;
+  color: #000;
+  padding: 1.5rem 0 1.5rem 0;
+  text-align: center;
+  border: none;
+  position: relative;
+  margin-top: 2.5rem;
+  z-index: 10;
+}
+header h1 {
+  font-size: 2.5rem;
+  font-family: 'ChonkyPixels', 'Roboto', Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: 2px;
+}
+nav a {
+  color: #000;
+  text-decoration: none;
+  margin: 0 1rem 0 0;
+  font-weight: bold;
+  font-size: 1rem;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+main {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  font-size: 1.15rem;
+}
+article {
+  border-bottom: 2px solid #111;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+}
+article h2 {
+  font-size: 2.3rem;
+  margin: 0 0 1rem 0;
+  font-weight: bold;
+  font-family: 'ChonkyPixels', Arial, Helvetica, sans-serif;
+}
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  padding: 0.5rem 2rem 0.5rem 1.5rem;
+  color: #000;
+  background: transparent;
+  font-size: 1rem;
+  font-family: 'ChonkyPixels', Arial, Helvetica, sans-serif;
+  z-index: 1000;
+  text-align: left;
+/* Import pixel/monospaced fonts */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Share+Tech+Mono&family=Fira+Mono&display=swap');
+}
